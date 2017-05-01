@@ -1,4 +1,10 @@
-tax_excluded_items = ['book','chocolate','pill']
+inp = open("inputs/TaxExemptedGoods.txt",'r')
+
+# used " at " as delimiter and not "at" to avoid erraneous splitting like chocol'at'es
+tax_excluded_items = [line.strip() for line in inp]
+
+inp.close()
+
 
 def getTaxStatus(itemName):
     taxApplied = True
